@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Custom Related Post with CSE</title>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+<script type='text/javascript'>
+google.load('search', '1', {language: 'in', style: google.loader.themes.V2_DEFAULT});
+google.setOnLoadCallback(function() {
+  var customSearchOptions = {};
+  var imageSearchOptions = {};
+  imageSearchOptions['layout'] = 'google.search.ImageSearch.LAYOUT_POPUP';
+  customSearchOptions['enableImageSearch'] = true;
+  var customSearchControl =   new google.search.CustomSearchControl('partner-pub-8648292563278695:5431983969', customSearchOptions);
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.enableSearchResultsOnly();
+  customSearchControl.draw('cse', options);
+
+    customSearchControl.execute("<data:post.title/>");
+  
+}, true);
+</script>
+</head>
+<body>
+<div id='cse' style='width: 100%;'>...</div>
+</body>
+</html>
